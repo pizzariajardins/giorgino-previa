@@ -1346,3 +1346,38 @@ html {
     margin: 22px auto 0 !important;
   }
 }
+/* GIORGINO - CARDAPIO CABECALHO V1 */
+
+.food.institutional-food {
+  padding-top: 48px !important;
+}
+
+.food.institutional-food .section-head {
+  margin-bottom: 20px !important;
+  gap: 30px;
+}
+
+.food.institutional-food .section-head h2 {
+  font-size: clamp(32px, 3.4vw, 48px) !important;
+  line-height: 1.12 !important;
+}
+
+.food.institutional-food .section-head .eyebrow {
+  margin-bottom: 18px !important;
+}
+
+.food.institutional-food .food-cta {
+  margin-top: 14px !important;
+  margin-bottom: 24px !important;
+}
+
+@media (max-width: 850px) {
+  .food.institutional-food {
+    padding-top: 40px !important;
+  }
+
+  .food.institutional-food .section-head {
+    gap: 15px !important;
+    margin-bottom: 18px !important;
+  }
+}

@@ -967,3 +967,77 @@ html {
     background: transparent !important;
   }
 }
+/* GIORGINO - HOMENAGEM RESPONSIVA V5 */
+
+/* Impede que o conteudo atravesse a divisoria */
+.story.story-editorial .story-columns,
+.story.story-editorial .story-copy {
+  min-width: 0 !important;
+}
+
+.story.story-editorial .story-memory-inline {
+  box-sizing: border-box !important;
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  margin: 26px 0 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: #080808 !important;
+  overflow: hidden !important;
+}
+
+/* Preserva toda a imagem e seu texto */
+.story.story-editorial .story-memory-inline img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  filter: none !important;
+
+  /* Dissolucao gradual nas extremidades */
+  -webkit-mask-image: radial-gradient(
+    ellipse 100% 100% at center,
+    #000 68%,
+    rgba(0,0,0,.95) 79%,
+    rgba(0,0,0,.55) 91%,
+    transparent 100%
+  ) !important;
+  mask-image: radial-gradient(
+    ellipse 100% 100% at center,
+    #000 68%,
+    rgba(0,0,0,.95) 79%,
+    rgba(0,0,0,.55) 91%,
+    transparent 100%
+  ) !important;
+}
+
+/* Retira sobreposicoes de ajustes anteriores */
+.story.story-editorial .story-memory-inline::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Texto narrativo aprovado */
+.story.story-editorial .story-copy > p:not(.eyebrow) {
+  font-size: 14px !important;
+  line-height: 1.9 !important;
+  font-weight: 400 !important;
+}
+
+/* Celular */
+@media (max-width: 850px) {
+  .story.story-editorial .story-memory-inline {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

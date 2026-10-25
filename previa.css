@@ -876,3 +876,35 @@ html {
   margin-top: 0 !important;
 }
 </CodeBlock>
+
+/* GIORGINO - HOMENAGEM AMPLIADA V2 */
+
+@media (min-width: 851px) {
+
+  .story.story-editorial .story-copy > p:not(.eyebrow) {
+    font-size: 15px !important;
+    line-height: 1.85 !important;
+  }
+
+  .story.story-editorial .story-memory-inline {
+    width: calc(100% + 55px) !important;
+    max-width: none !important;
+    margin: 32px 0 0 !important;
+  }
+
+  .story.story-editorial .story-memory-inline img {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .story.story-editorial .story-memory-inline {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 28px auto 0 !important;
+  }
+}

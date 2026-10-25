@@ -704,62 +704,142 @@ html {
   }
 }
 
-/* AJUSTE FINO — SEÇÃO NOSSA HISTÓRIA */
-.history-layout,
-.story-layout,
-.historia-layout {
-  align-items: start;
-  gap: 56px;
+
+/* GIORGINO — AJUSTE DEFINITIVO NOSSA HISTORIA */
+
+/* Equilibrio entre narrativa e linha do tempo */
+.story.story-editorial .story-columns {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr) !important;
+  gap: clamp(28px, 3.5vw, 56px) !important;
+  align-items: start !important;
 }
 
-.history-copy,
-.story-copy,
-.historia-copy {
-  max-width: 720px;
+/* Texto maior, confortavel e sem negrito */
+.story.story-editorial .story-copy > p:not(.eyebrow) {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.85 !important;
+  color: #ece7df !important;
+  max-width: 100% !important;
+  margin-bottom: 24px !important;
 }
 
-.history-copy p,
-.story-copy p,
-.historia-copy p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.15rem;
-  line-height: 1.95;
-  color: #f4f1eb;
-  margin-bottom: 28px;
+/* Titulo classico preservado */
+.story.story-editorial .story-copy h2 {
+  font-family: Georgia, serif !important;
+  font-size: clamp(31px, 3.1vw, 45px) !important;
+  line-height: 1.18 !important;
+  margin-bottom: 32px !important;
 }
 
-.history-copy h2,
-.story-copy h2,
-.historia-copy h2 {
-  font-size: clamp(2.6rem, 4vw, 4.2rem);
-  line-height: 1.08;
-  margin-bottom: 28px;
+/* Coluna da linha do tempo */
+.story.story-editorial .story-visual-timeline {
+  min-width: 0;
+  padding-left: clamp(18px, 2.5vw, 36px) !important;
 }
 
-.history-timeline,
-.story-timeline,
-.historia-timeline {
-  max-width: 560px;
+/* Reducao real das cinco artes */
+.story.story-editorial .history-art-stack {
+  width: 100% !important;
+  max-width: 390px !important;
+  margin: 0 auto !important;
+  align-items: center !important;
 }
 
-.history-timeline .timeline-item,
-.story-timeline .timeline-item,
-.historia-timeline .timeline-item {
-  margin-bottom: 28px;
+.story.story-editorial .history-art-stack figure {
+  width: 100% !important;
+  max-width: 390px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
 }
 
-.history-timeline .timeline-item img,
-.story-timeline .timeline-item img,
-.historia-timeline .timeline-item img {
-  width: 100%;
-  max-width: 540px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+.story.story-editorial .history-art-stack img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 390px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border: 0 !important;
 }
 
-.history-homenagem,
-.story-homenagem,
-.historia-homenagem {
-  margin-top: 56px;
+/* Conectores dourados mais discretos */
+.story.story-editorial
+.history-art-stack figure:not(:last-child)::after {
+  height: 24px !important;
+  margin: 5px auto !important;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #c8a46b,
+    transparent
+  ) !important;
+}
+
+/* Ano alinhado com o conjunto visual */
+.story.story-editorial .story-year {
+  font-size: 44px !important;
+  padding-bottom: 16px !important;
+}
+
+/* Homenagem mais proxima da narrativa */
+.story.story-editorial .story-ending {
+  max-width: 960px !important;
+  margin: 48px auto 0 !important;
+}
+
+.story.story-editorial .story-ending .memory {
+  background: #141210 !important;
+  border-left: 2px solid #c8a46b !important;
+  padding: clamp(28px, 4vw, 48px) !important;
+  margin-bottom: 32px !important;
+}
+
+.story.story-editorial .story-ending .memory p {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.9 !important;
+  color: #ebe5dd !important;
+}
+
+.story.story-editorial .story-closing {
+  margin-top: 34px !important;
+}
+
+/* Botoes flutuantes mais discretos */
+.floating-links {
+  gap: 10px !important;
+  right: 16px !important;
+  bottom: 16px !important;
+}
+
+.floating-links > * {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  padding: 10px 14px !important;
+}
+
+/* Ajustes para celular */
+@media (max-width: 850px) {
+  .story.story-editorial .story-columns {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .story.story-editorial .story-copy > p:not(.eyebrow) {
+    font-size: 15px !important;
+    line-height: 1.85 !important;
+  }
+
+  .story.story-editorial .history-art-stack,
+  .story.story-editorial .history-art-stack figure,
+  .story.story-editorial .history-art-stack img {
+    max-width: 100% !important;
+  }
+
+  .story.story-editorial .story-ending {
+    margin-top: 42px !important;
+  }
 }

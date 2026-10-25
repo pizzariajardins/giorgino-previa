@@ -1159,3 +1159,61 @@ html {
     max-width: 100% !important;
   }
 }
+/* GIORGINO - AJUSTE FINAL HOMENAGEM V12 */
+
+.story.story-editorial .story-memory-inline {
+  width: 90% !important;
+  max-width: 620px !important;
+  margin: 18px 0 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.story.story-editorial .story-memory-inline img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  object-fit: contain !important;
+
+  /* dissolve as bordas no fundo preto do site */
+  -webkit-mask-image: radial-gradient(
+    ellipse 96% 95% at center,
+    rgba(0,0,0,1) 76%,
+    rgba(0,0,0,0.96) 84%,
+    rgba(0,0,0,0.72) 91%,
+    rgba(0,0,0,0.28) 97%,
+    rgba(0,0,0,0) 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 96% 95% at center,
+    rgba(0,0,0,1) 76%,
+    rgba(0,0,0,0.96) 84%,
+    rgba(0,0,0,0.72) 91%,
+    rgba(0,0,0,0.28) 97%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+.story.story-editorial .story-memory-inline::before,
+.story.story-editorial .story-memory-inline::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 850px) {
+  .story.story-editorial .story-memory-inline {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

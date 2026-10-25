@@ -843,3 +843,36 @@ html {
     margin-top: 42px !important;
   }
 }
+
+<CodeBlock language="css" editable>
+/* GIORGINO — HOMENAGEM INTEGRADA A NARRATIVA */
+.story.story-editorial .story-memory-inline {
+  width: 100%;
+  max-width: 650px;
+  margin: 35px auto 0;
+}
+.story.story-editorial .story-memory-inline img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 0;
+  box-shadow: none;
+  -webkit-mask-image: radial-gradient(
+    ellipse 90% 95% at center,
+    #000 75%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 90% 95% at center,
+    #000 75%,
+    transparent 100%
+  );
+}
+.story.story-editorial .story-ending {
+  margin: 35px auto 0 !important;
+}
+.story.story-editorial .story-closing {
+  margin-top: 0 !important;
+}
+</CodeBlock>

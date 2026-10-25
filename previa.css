@@ -703,3 +703,63 @@ html {
     margin-top: 55px;
   }
 }
+
+/* AJUSTE FINO — SEÇÃO NOSSA HISTÓRIA */
+.history-layout,
+.story-layout,
+.historia-layout {
+  align-items: start;
+  gap: 56px;
+}
+
+.history-copy,
+.story-copy,
+.historia-copy {
+  max-width: 720px;
+}
+
+.history-copy p,
+.story-copy p,
+.historia-copy p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.95;
+  color: #f4f1eb;
+  margin-bottom: 28px;
+}
+
+.history-copy h2,
+.story-copy h2,
+.historia-copy h2 {
+  font-size: clamp(2.6rem, 4vw, 4.2rem);
+  line-height: 1.08;
+  margin-bottom: 28px;
+}
+
+.history-timeline,
+.story-timeline,
+.historia-timeline {
+  max-width: 560px;
+}
+
+.history-timeline .timeline-item,
+.story-timeline .timeline-item,
+.historia-timeline .timeline-item {
+  margin-bottom: 28px;
+}
+
+.history-timeline .timeline-item img,
+.story-timeline .timeline-item img,
+.historia-timeline .timeline-item img {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.history-homenagem,
+.story-homenagem,
+.historia-homenagem {
+  margin-top: 56px;
+}

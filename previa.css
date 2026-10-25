@@ -385,3 +385,113 @@ header {
     max-height: 64px !important;
   }
 }
+
+
+/* GIORGINO — REFINAMENTO PANORAMICO DA HOME */
+
+/* Logotipo sem distorcao */
+header .brand {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0;
+}
+
+header .brand img {
+  display: block !important;
+  width: auto !important;
+  height: 112px !important;
+  max-height: 112px !important;
+  max-width: 180px !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+header {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+/* Home com imagem larga e integrada ao preto */
+.hero.hero-art {
+  min-height: 0 !important;
+  height: calc(100svh - 132px) !important;
+  padding: 5px 0 10px !important;
+  overflow: hidden !important;
+  background: #000 !important;
+}
+
+.hero-art-content {
+  width: 100% !important;
+  max-width: none !important;
+  height: 100%;
+  gap: 9px !important;
+  justify-content: center !important;
+}
+
+.hero-art-image {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: calc(100% - 61px) !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  box-shadow: none !important;
+  border: 0 !important;
+
+  /* Dissolve os limites da arte no fundo preto */
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse 78% 92% at center,
+      #000 70%,
+      transparent 100%
+    );
+  mask-image:
+    radial-gradient(
+      ellipse 78% 92% at center,
+      #000 70%,
+      transparent 100%
+    );
+}
+
+.hero-art-actions {
+  flex-shrink: 0;
+  margin: 0 !important;
+  gap: 20px !important;
+}
+
+/* Conservar os botoes finos */
+.hero-art-actions a,
+header .contact {
+  padding: 13px 24px !important;
+}
+
+/* Ajustes em telas menores */
+@media (max-width: 900px) {
+  header .brand img {
+    height: 80px !important;
+    max-height: 80px !important;
+    max-width: 125px !important;
+  }
+
+  .hero.hero-art {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 14px 0 24px !important;
+  }
+
+  .hero-art-content {
+    height: auto;
+  }
+
+  .hero-art-image {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+
+  .hero-art-actions {
+    padding: 0 12px;
+  }
+}

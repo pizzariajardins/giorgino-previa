@@ -287,3 +287,101 @@ header .brand img,
     font-size: 10px !important;
   }
 }
+
+/* AJUSTE FINO 2 — HOME GIORGINO */
+
+.hero.hero-art {
+  padding: 10px 2.2% 12px !important;
+  background: #000 !important;
+}
+
+.hero-art-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  gap: 10px !important;
+}
+
+.hero-art-image {
+  display: block !important;
+  width: min(1380px, 94vw) !important;
+  max-width: 94vw !important;
+  max-height: calc(100vh - 205px) !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  box-shadow: 0 0 120px 35px rgba(0, 0, 0, 0.95) !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.hero-art-actions {
+  gap: 16px !important;
+  margin-top: 2px !important;
+}
+
+.hero-art-actions a,
+.contact {
+  padding: 14px 26px !important;
+  min-height: auto !important;
+  line-height: 1 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.04em !important;
+}
+
+.contact {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.brand img,
+header .brand img,
+.logo img {
+  width: auto !important;
+  height: 82px !important;
+  max-height: 82px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  transform: none !important;
+}
+
+header {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+@media (max-width: 1200px) {
+  .hero-art-image {
+    width: min(1200px, 95vw) !important;
+    max-height: calc(100vh - 220px) !important;
+  }
+
+  .brand img,
+  header .brand img,
+  .logo img {
+    height: 74px !important;
+    max-height: 74px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-art-image {
+    width: 96vw !important;
+    max-width: 96vw !important;
+    max-height: none !important;
+    box-shadow: 0 0 70px 18px rgba(0, 0, 0, 0.92) !important;
+  }
+
+  .hero-art-actions a,
+  .contact {
+    padding: 12px 18px !important;
+    font-size: 10px !important;
+  }
+
+  .brand img,
+  header .brand img,
+  .logo img {
+    height: 64px !important;
+    max-height: 64px !important;
+  }
+}

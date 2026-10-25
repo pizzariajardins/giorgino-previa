@@ -1041,3 +1041,91 @@ html {
     max-width: 100% !important;
   }
 }
+
+
+/* === GIORGINO HOMENAGEM V6 INICIO === */
+
+.story.story-editorial .story-columns{
+  align-items:start !important;
+}
+
+.story.story-editorial .story-copy{
+  min-width:0 !important;
+}
+
+.story.story-editorial .story-memory-inline{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  margin:16px 0 0 !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+}
+
+/* imagem da homenagem maior, sem distorcer */
+.story.story-editorial .story-memory-inline img{
+  display:block !important;
+  width:109% !important;
+  max-width:none !important;
+  height:auto !important;
+  margin:0 0 0 -4.5% !important;
+  object-fit:contain !important;
+  object-position:center top !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  filter:brightness(1.03) contrast(1.03) !important;
+
+  /* dissolve as bordas para integrar ao fundo preto */
+  -webkit-mask-image: radial-gradient(
+    ellipse 108% 102% at center,
+    #000 60%,
+    rgba(0,0,0,.96) 76%,
+    rgba(0,0,0,.70) 88%,
+    rgba(0,0,0,.28) 95%,
+    transparent 100%
+  ) !important;
+  mask-image: radial-gradient(
+    ellipse 108% 102% at center,
+    #000 60%,
+    rgba(0,0,0,.96) 76%,
+    rgba(0,0,0,.70) 88%,
+    rgba(0,0,0,.28) 95%,
+    transparent 100%
+  ) !important;
+}
+
+/* reforça a integração com o fundo do site */
+.story.story-editorial .story-memory-inline::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  pointer-events:none !important;
+  box-shadow:
+    inset 0 0 140px 26px #000,
+    inset 0 0 60px 12px rgba(0,0,0,.92) !important;
+}
+
+/* aproxima o fechamento para evitar sensação de espaço vazio */
+.story.story-editorial .story-ending{
+  margin-top:10px !important;
+}
+
+.story.story-editorial .story-closing{
+  margin-top:6px !important;
+}
+
+@media (max-width: 850px){
+  .story.story-editorial .story-memory-inline img{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+  }
+}
+
+/* === GIORGINO HOMENAGEM V6 FIM === */

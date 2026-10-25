@@ -206,3 +206,84 @@ body h3 {
     max-height: calc(100svh - 195px);
   }
 }
+
+/* AJUSTE FINO HOME GIORGINO — ARTE INICIAL */
+
+html, body {
+  overflow-x: hidden !important;
+}
+
+.preview,
+.preview-bar,
+.preview-banner {
+  display: none !important;
+}
+
+header {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+.brand img,
+header .brand img,
+.logo img {
+  max-height: 72px !important;
+  height: auto !important;
+}
+
+.hero.hero-art {
+  min-height: calc(100vh - 96px) !important;
+  padding: 8px 2.5% 10px !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+.hero-art-content {
+  max-width: 1180px !important;
+  gap: 8px !important;
+}
+
+.hero-art-image {
+  display: block !important;
+  width: auto !important;
+  max-width: 100% !important;
+  max-height: calc(100vh - 220px) !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+}
+
+.hero-art-actions {
+  margin-top: 4px !important;
+  gap: 18px !important;
+}
+
+.hero-art-actions a {
+  font-size: 11px !important;
+}
+
+@media (max-width: 1200px) {
+  .hero-art-image {
+    max-height: calc(100vh - 240px) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero.hero-art {
+    min-height: auto !important;
+    padding: 18px 4% 24px !important;
+  }
+
+  .hero-art-image {
+    max-height: none !important;
+    max-width: 100% !important;
+  }
+
+  .hero-art-actions {
+    gap: 12px !important;
+  }
+
+  .hero-art-actions a {
+    font-size: 10px !important;
+  }
+}

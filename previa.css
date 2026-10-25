@@ -92,3 +92,117 @@ body textarea::placeholder {
 body hr {
   border-color: #494949;
 }
+
+/* GIORGINO — HOME EDITORIAL APROVADA */
+
+.preview {
+  display: none !important;
+}
+
+.hero.hero-art {
+  background: #080808 !important;
+  color: #ffffff !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100svh - 105px) !important;
+  padding: 12px 3% 18px !important;
+  margin: 0;
+  gap: 0 !important;
+  overflow: hidden;
+}
+
+.hero-art-content {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero-art-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100svh - 235px);
+  object-fit: contain;
+  object-position: center;
+}
+
+.hero-art-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.hero-art-actions a {
+  font-family: "Montserrat", "Segoe UI", sans-serif !important;
+  font-size: 12px;
+  font-weight: 700 !important;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+/* Tipografia moderna dos menus e botoes */
+body nav,
+body nav a,
+body button,
+body .menu,
+body .contact,
+body .actions a,
+body .food-cta a,
+body .floating-links a,
+body input[type="submit"],
+body select {
+  font-family: "Montserrat", "Segoe UI", sans-serif !important;
+  font-weight: 700 !important;
+}
+
+body nav a {
+  font-size: 12px !important;
+  letter-spacing: 0.015em;
+}
+
+body .contact {
+  font-size: 11px !important;
+  letter-spacing: 0.035em;
+}
+
+/* Titulos editoriais preservados */
+body h1,
+body h2,
+body h3 {
+  font-family: Georgia, serif;
+}
+
+@media (max-width: 850px) {
+  .hero.hero-art {
+    min-height: auto !important;
+    padding: 20px 4% 30px !important;
+  }
+  .hero-art-image {
+    max-height: none;
+    width: 100%;
+  }
+  .hero-art-actions {
+    gap: 12px;
+  }
+  .hero-art-actions a {
+    font-size: 10px;
+  }
+}
+
+@media (max-height: 650px) and (min-width: 851px) {
+  .hero-art-image {
+    max-height: calc(100svh - 195px);
+  }
+}

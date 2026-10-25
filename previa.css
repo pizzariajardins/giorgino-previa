@@ -1279,3 +1279,70 @@ html {
     max-width: 100% !important;
   }
 }
+
+
+/* GIORGINO - HOMENAGEM V14 FUNDO INTEGRADO */
+
+/* Mesmo preto no fundo da secao e da imagem */
+.story.story-editorial,
+.story.story-editorial .story-columns,
+.story.story-editorial .story-copy {
+  background-color: #000000 !important;
+}
+
+/* Homenagem ligeiramente menor */
+.story.story-editorial .story-memory-inline {
+  position: relative !important;
+  box-sizing: border-box !important;
+  width: 82% !important;
+  max-width: 560px !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  margin: 18px 0 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Faz o preto da imagem desaparecer sobre o preto
+   da pagina, preservando a moldura e as letras */
+.story.story-editorial .story-memory-inline img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+
+  mix-blend-mode: screen !important;
+
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  filter: none !important;
+}
+
+/* Retira camadas escuras adicionadas
+   nos ajustes anteriores */
+.story.story-editorial .story-memory-inline::before,
+.story.story-editorial .story-memory-inline::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Mantem a proporcao no celular */
+@media (max-width: 850px) {
+  .story.story-editorial .story-memory-inline {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 22px auto 0 !important;
+  }
+}

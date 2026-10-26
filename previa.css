@@ -1596,3 +1596,47 @@ html {
     max-height: 300px !important;
   }
 }
+/* GIORGINO PIZZAS FINAIS 16X9 V1 */
+
+#cardapio.institutional-food:has(.category-tabs button:first-child.active)
+.feature-picture {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: hidden !important;
+    background: #080808 !important;
+    border: 0 !important;
+}
+
+#cardapio.institutional-food:has(.category-tabs button:first-child.active)
+.feature-picture::before,
+#cardapio.institutional-food:has(.category-tabs button:first-child.active)
+.feature-picture::after {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+}
+
+/* Mantem a nova foto inteira, sem alterar pizza ou logo */
+#cardapio.institutional-food:has(.category-tabs button:first-child.active)
+.feature-picture #feature-image {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+/* Outras categorias permanecem inalteradas */

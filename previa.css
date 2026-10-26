@@ -1505,3 +1505,38 @@ html {
   }
 }
 /* AJUSTE EXTRA PIZZAS END */
+
+
+/* GIORGINO - PIZZAS PROPORCIONAIS V3 */
+
+/* A regra vale somente quando a aba Pizzas estiver ativa */
+#cardapio:has(.category-tabs button:first-child.active)
+.feature-picture {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #080808 !important;
+}
+
+/* Fotografia completa, menor e centralizada */
+#cardapio:has(.category-tabs button:first-child.active)
+#feature-image {
+  display: block !important;
+  width: 75% !important;
+  max-width: 75% !important;
+  height: auto !important;
+  max-height: 340px !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+  transform: none !important;
+}
+
+/* No celular, preservar a visibilidade da pizza */
+@media (max-width: 850px) {
+  #cardapio:has(.category-tabs button:first-child.active)
+  #feature-image {
+    width: 85% !important;
+    max-width: 85% !important;
+    height: auto !important;
+  }
+}

@@ -1434,3 +1434,42 @@ html {
     max-width: 100% !important;
   }
 }
+
+
+/* AJUSTE FINO - PIZZAS MENORES */
+#cardapio.cardapio-pizza-ajustada .menu-stage img,
+#cardapio.cardapio-pizza-ajustada .menu-visual img,
+#cardapio.cardapio-pizza-ajustada .cardapio-visual img,
+#cardapio.cardapio-pizza-ajustada .dish-visual img,
+#cardapio.cardapio-pizza-ajustada .dish-photo img,
+#cardapio.cardapio-pizza-ajustada .food-photo img,
+#cardapio.cardapio-pizza-ajustada .slide-photo img,
+#cardapio.cardapio-pizza-ajustada .menu-photo img,
+#cardapio.cardapio-pizza-ajustada .prato-foto img,
+#cardapio.cardapio-pizza-ajustada .cardapio-foto img,
+#cardapio.cardapio-pizza-ajustada img.prato-imagem,
+#cardapio.cardapio-pizza-ajustada img.cardapio-imagem {
+  width: min(72%, 500px) !important;
+  max-width: 72% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 980px) {
+  #cardapio.cardapio-pizza-ajustada .menu-stage img,
+  #cardapio.cardapio-pizza-ajustada .menu-visual img,
+  #cardapio.cardapio-pizza-ajustada .cardapio-visual img,
+  #cardapio.cardapio-pizza-ajustada .dish-visual img,
+  #cardapio.cardapio-pizza-ajustada .dish-photo img,
+  #cardapio.cardapio-pizza-ajustada .food-photo img,
+  #cardapio.cardapio-pizza-ajustada .slide-photo img,
+  #cardapio.cardapio-pizza-ajustada .menu-photo img,
+  #cardapio.cardapio-pizza-ajustada .prato-foto img,
+  #cardapio.cardapio-pizza-ajustada .cardapio-foto img,
+  #cardapio.cardapio-pizza-ajustada img.prato-imagem,
+  #cardapio.cardapio-pizza-ajustada img.cardapio-imagem {
+    width: min(88%, 500px) !important;
+    max-width: 88% !important;
+  }
+}

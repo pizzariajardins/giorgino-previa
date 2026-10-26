@@ -1,4 +1,4 @@
-const contact=document.querySelector('#contact-dialog');
+﻿const contact=document.querySelector('#contact-dialog');
 document.querySelectorAll('[data-contact]').forEach(button=>button.addEventListener('click',()=>contact.showModal()));
 document.querySelectorAll('dialog .close').forEach(button=>button.addEventListener('click',()=>button.closest('dialog').close()));
 document.querySelectorAll('dialog').forEach(dialog=>dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}}));
@@ -59,3 +59,116 @@ Motivo: ${d.get('occasion')}
 Pedidos especiais: ${d.get('requests').trim()||'Nenhum'}
 
 Li e concordo com a tolerância de 15 minutos; após esse prazo, a reserva poderá ser cancelada pela equipe e a mesa poderá ser liberada. Entendo que os pedidos especiais dependem de disponibilidade e que eventuais valores serão combinados previamente. Aguardo a confirmação da equipe.`;window.open('https://wa.me/5511975386869?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');document.querySelector('#reservation-status').textContent='Revise e envie a mensagem no WhatsApp. Sua reserva depende da confirmação da equipe.';});
+
+
+// AJUSTE PIZZAS + AUTOPLAY 3S
+(function () {
+  const section = document.querySelector('#cardapio');
+  if (!section) return;
+
+  function allButtons() {
+    return Array.from(section.querySelectorAll('button, [role="tab"], .pill, .chip, .tag'));
+  }
+
+  function activeCategoryText() {
+    const activeBtn = allButtons().find(el =>
+      el.classList.contains('active') ||
+      el.classList.contains('is-active') ||
+      el.classList.contains('selected') ||
+      el.classList.contains('current') ||
+      el.getAttribute('aria-selected') === 'true' ||
+      el.getAttribute('aria-pressed') === 'true' ||
+      el.getAttribute('data-active') === 'true'
+    );
+
+    if (activeBtn) return (activeBtn.textContent || '').trim().toLowerCase();
+
+    const labels = Array.from(section.querySelectorAll('p, span, div'))
+      .map(el => (el.textContent || '').trim())
+      .filter(Boolean);
+
+    const found = labels.find(t =>
+      /^pizzas$/i.test(t) ||
+      /^massas$/i.test(t) ||
+      /^carnes$/i.test(t) ||
+      /^risotos$/i.test(t) ||
+      /^peixes$/i.test(t) ||
+      /^saladas\s*&\s*entradas$/i.test(t) ||
+      /^sobremesas$/i.test(t)
+    );
+
+    return (found || '').toLowerCase();
+  }
+
+  function syncPizzaClass() {
+    const txt = activeCategoryText();
+    section.classList.toggle('cardapio-pizza-ajustada', txt.indexOf('pizza') >= 0);
+  }
+
+  function findPauseButton() {
+    return Array.from(section.querySelectorAll('button')).find(b =>
+      /pausar|pause/i.test((b.textContent || '').trim())
+    );
+  }
+
+  function findNextButton() {
+    return Array.from(section.querySelectorAll('button')).find(b => {
+      const t = (b.textContent || '').trim();
+      const aria = (b.getAttribute('aria-label') || '').trim();
+      return t === '→' || t === '>' || /proximo|próximo|next|avancar|avançar/i.test(aria);
+    }) || section.querySelector('.next, .is-next, [data-next]');
+  }
+
+  let customTimer = null;
+
+  function stopCustomTimer() {
+    if (customTimer) {
+      clearInterval(customTimer);
+      customTimer = null;
+    }
+  }
+
+  function startCustomTimer() {
+    stopCustomTimer();
+    const nextButton = findNextButton();
+    if (!nextButton) return;
+
+    customTimer = setInterval(function () {
+      if (section.offsetParent !== null) {
+        nextButton.click();
+      }
+    }, 3000);
+  }
+
+  function enable3sMode() {
+    const pauseButton = findPauseButton();
+    if (pauseButton && pauseButton.dataset.autopauseHandled !== 'true') {
+      pauseButton.dataset.autopauseHandled = 'true';
+      try { pauseButton.click(); } catch (e) {}
+    }
+    startCustomTimer();
+  }
+
+  syncPizzaClass();
+  enable3sMode();
+
+  const observer = new MutationObserver(function () {
+    syncPizzaClass();
+  });
+
+  observer.observe(section, {
+    childList: true,
+    subtree: true,
+    attributes: true
+  });
+
+  section.addEventListener('click', function (e) {
+    const btn = e.target.closest('button, [role="tab"], .pill, .chip, .tag');
+    if (!btn) return;
+
+    setTimeout(function () {
+      syncPizzaClass();
+      startCustomTimer();
+    }, 120);
+  });
+})();

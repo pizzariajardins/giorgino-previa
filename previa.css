@@ -1540,3 +1540,59 @@ html {
     height: auto !important;
   }
 }
+
+/* GIORGINO - PIZZAS COM FUNDO INTEGRADO V1 */
+
+.feature-picture.pizza-stage {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #080808 !important;
+}
+
+.feature-picture.pizza-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--pizza-stage-bg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  filter: blur(26px) brightness(0.42);
+  transform: scale(1.16);
+  opacity: 1;
+  z-index: 0;
+}
+
+.feature-picture.pizza-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.10) 0%,
+      rgba(0,0,0,0.22) 100%
+    );
+  z-index: 0;
+}
+
+.feature-picture.pizza-stage #feature-image {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: 82% !important;
+  max-width: 82% !important;
+  height: auto !important;
+  max-height: 330px !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  background: transparent !important;
+}
+
+@media (max-width: 850px) {
+  .feature-picture.pizza-stage #feature-image {
+    width: 88% !important;
+    max-width: 88% !important;
+    max-height: 300px !important;
+  }
+}

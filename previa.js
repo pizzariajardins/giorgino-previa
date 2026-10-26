@@ -172,3 +172,39 @@ Li e concordo com a tolerância de 15 minutos; após esse prazo, a reserva poder
     }, 120);
   });
 })();
+
+
+/* GIORGINO - PIZZAS COM FUNDO INTEGRADO V1 */
+(function () {
+  function syncPizzaStage() {
+    var stage = document.querySelector(".feature-picture");
+    var image = document.getElementById("feature-image");
+    var active = document.querySelector(".category-tabs button.active");
+
+    if (!stage || !image || !active) return;
+
+    var nome = (active.textContent || "").trim().toLowerCase();
+    var isPizza = nome === "pizzas";
+
+    if (isPizza) {
+      stage.classList.add("pizza-stage");
+      stage.style.setProperty("--pizza-stage-bg", 'url("' + image.src + '")');
+    } else {
+      stage.classList.remove("pizza-stage");
+      stage.style.removeProperty("--pizza-stage-bg");
+    }
+  }
+
+  function startPizzaStageWatcher() {
+    syncPizzaStage();
+    setInterval(syncPizzaStage, 500);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", startPizzaStageWatcher);
+  } else {
+    startPizzaStageWatcher();
+  }
+
+  window.addEventListener("load", syncPizzaStage);
+})();
